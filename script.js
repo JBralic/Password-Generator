@@ -1,4 +1,4 @@
-// Array of special characters to be included in password
+// List of special characters for password generation
 var specialCharacters = [
   '+',
   '@',
@@ -25,7 +25,7 @@ var specialCharacters = [
   '-',
   '_'
 ];
-// Array of numeric characters to be included in password
+// List of numeric characters for password generation
 var numericCharacters = [
 '0', 
 '1', 
@@ -38,7 +38,7 @@ var numericCharacters = [
 '8', 
 '9'
 ];
-// Array of uppercase characters to be included in password
+// List of uppercase characters for password generation
 var upperCasedCharacters = [
   'A',
   'B',
@@ -67,7 +67,7 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
-// Array of lowercase characters to be included in password
+// List of lowercase characters for password generation
 var lowerCasedCharacters = [
   'a',
   'b',
@@ -114,7 +114,7 @@ function getPasswordOptions() {
   }
   // Conditional statement to check if password length is less than 128 characters long. Prompts end if this evaluates false
   if (length > 128) {
-    alert('Password length must less than 129 characters');
+    alert('Password length must less than 30 characters');
     return null;
   }
   // Variable to store boolean regarding the inclusion of special characters
@@ -159,9 +159,20 @@ function getRandom(arr) {
   var randElement = arr[randIndex];
   return randElement;
 }
+var lookupvalues ={"o":"0","l":"1","z":"2","e":"3","f":"4","s":"5","b":"6","v":"7",}
 // Function to generate password with user input
 function generatePassword() {
-  var options = getPasswordOptions();
+  // var options = getPasswordOptions();
+  var nicknameinputfield = document.getElementById("nickname");
+  var nickname = nicknameinputfield.value
+var splitnickname = nickname.split("")
+for (var i = 0; i < splitnickname.length; i++) {
+if (lookupvalues[splitnickname[i]]) {
+  splitnickname[i] = lookupvalues[splitnickname[i]]
+}
+}
+nickname = splitnickname.join("")
+  alert(nickname)
   // Variable to store password as it's being concatenated
   var result = [];
   // Array to store types of characters to include in password

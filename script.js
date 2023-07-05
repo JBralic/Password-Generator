@@ -159,7 +159,7 @@ function getRandom(arr) {
   var randElement = arr[randIndex];
   return randElement;
 }
-var lookupvalues ={"o":"0","l":"1","z":"2","e":"3","f":"4","s":"5","b":"6","v":"7",}
+var lookupvalues ={"o":"0","l":"1","z":"2","e":"3","f":"4","s":"5","b":"6","v":"7","i":"!"}
 // Function to generate password with user input
 function generatePassword() {
   // var options = getPasswordOptions();
